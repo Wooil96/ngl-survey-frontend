@@ -1,32 +1,24 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar app>
+      <h1>NGL Survey</h1>
+      <!-- <v-btn color="primary" elevation="5" large>Sign In</v-btn> -->
+    </v-app-bar>
+
+    
+      <router-view></router-view>
+    
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App",
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>

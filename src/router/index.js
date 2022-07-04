@@ -1,23 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Survey from '../views/Survey.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import UserSurvey from '../views/SurveyList.vue'
+import TestSurvey from '../views/TestSurvey.vue'
+// import SurveyDetail from '../views/SurveyDetail.vue'
+import AdminSurvey from '../views/AdminSurvey.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/survey',
+    name: 'survey',
+    component: Survey
+  }, {
     path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    name: 'login',
+    component: Login
+  }, {
+    path: '/register',
+    name: 'register',
+    component: Register
+  }, {
+    path: '/surveylist',
+    name: 'usersurvey',
+    component: UserSurvey
+  }, {
+    path: '/:user_email',
+    name: 'adminsurvey',
+    component: AdminSurvey
+
   }
+
+  
 ]
 
 const router = new VueRouter({
@@ -26,4 +43,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+export default router;

@@ -6,6 +6,7 @@ module.exports = defineConfig({
   lintOnSave: false,
   devServer: {
     // api 요청이 이쓸 때 어디에서 처리할지를 설정
+    historyApiFallback: true,
     proxy: {
       '/api': {
         target: 'http://localhost:3000/api',

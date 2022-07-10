@@ -11,7 +11,7 @@
                 :headers="headers"
                 :items="survey_list"
                 :items-per-page="5"
-                @click:row="rowClick"
+                @click:row="handleClick"
               >
                 <template v-slot:item.path="{ item }">
                   <v-select v-model="cSel" :items="item.path"></v-select>
@@ -77,14 +77,21 @@ export default {
       });
   },
   methods: {
-    rowClick(item, row) {
-      var user_email = item.usr_email;
-      console.log(this.$cookies);
-      this.$router.push(`/${user_email}`);
-      // this.$http.get(`api/survey/${user_email}`, {
-      //   user: user_email,
-      // })
-    },
+    // rowClick(item, row) {
+    //   var user_email = item.usr_email;
+    //   console.log(this.$cookies);
+    //   this.$router.push(`/${user_email}`);
+    //   // this.$http.get(`api/survey/${user_email}`, {
+    //   //   user: user_email,
+    //   // })
+    // },
+    handleClick(row) {
+      this.survey_list.map((item, index) => {
+        item.selected = item === row
+
+        this.$set(this.survey_list, index, item)
+      })
+    }
   },
 };
 </script>

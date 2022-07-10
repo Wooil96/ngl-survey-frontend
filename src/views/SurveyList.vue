@@ -13,9 +13,9 @@
                 :items-per-page="5"
                 @click:row="handleClick"
               >
-                <template v-slot:item.path="{ item }">
+                <!-- <template v-slot:item.path="{ item }">
                   <v-select v-model="cSel" :items="item.path"></v-select>
-                </template>
+                </template> -->
               </v-data-table>
             </v-card>
           </v-flex>
@@ -44,7 +44,7 @@ export default {
         { text: "TMS Name", value: "tms_name" },
         { text: "App Name", value: "app_name" },
         { text: "Button Name", value: "btn_name" },
-        { text: 'Create  ', value: 'path', width: '200' },
+        // { text: 'Create  ', value: 'path', width: '200' },
       ],
 
       survey_list: [{}],

@@ -162,17 +162,36 @@
         <h2>3. Button Name</h2>
       </v-col>
     </v-row>
+    <v-card
+      class="pa-5"
+      outlined
+      tile
+      style="
+        text-align: center;
+        font-size: 4vm;
+        font-family: 'Times New Roman', Times, serif;
+      "
+    >
+      Button represents the Job's status<br />
+      Button is the blue square at the bottom.
+    </v-card>
 
     <!-- Button 01 ~ 02 -->
     <v-row style="margin-top: 1vw">
       <!-- Button 01's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 01.</h4>
+        <div class="imghover">
+          <img src="..\public\btn_img\btn01.png" alt="button01" />
+        </div>
       </v-col>
 
       <!-- Button 02's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 02.</h4>
+        <div class="imghover">
+          <img src="..\public\btn_img\btn02.png" alt="button01" />
+        </div>
       </v-col>
     </v-row>
 
@@ -219,11 +238,17 @@
       <!-- Button 03's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 03.</h4>
+        <div class="imghover">
+          <img src="..\public\btn_img\btn03.png" alt="button01" />
+        </div>
       </v-col>
 
       <!-- Button 04's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 04.</h4>
+        <div class="imghover">
+          <img src="..\public\btn_img\btn04.png" alt="button01" />
+        </div>
       </v-col>
     </v-row>
 
@@ -270,11 +295,17 @@
       <!-- Button 05's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 05.</h4>
+        <div class="imghover" style="z-index: 1">
+          <img src="..\public\btn_img\btn05.png" alt="button01" />
+        </div>
       </v-col>
 
       <!-- Button 06's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 06.</h4>
+        <div class="imghover" style="z-index: 1">
+          <img src="..\public\btn_img\btn06.png" alt="button01" />
+        </div>
       </v-col>
     </v-row>
 
@@ -321,11 +352,17 @@
       <!-- Button 07's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 07.</h4>
+        <div class="imghover">
+          <img src="..\public\btn_img\btn07.png" alt="button01" />
+        </div>
       </v-col>
 
       <!-- Button 08's Name -->
       <v-col cols="6" sm="6" align-self="center">
         <h4>Button 08.</h4>
+        <div class="imghover">
+          <img src="..\public\btn_img\btn08.png" alt="button01" />
+        </div>
       </v-col>
     </v-row>
 
@@ -346,7 +383,6 @@
           placeholder="Option 01"
           class="thumbnail"
         ></v-text-field>
-        
       </v-col>
     </v-row>
 
@@ -370,18 +406,20 @@
     </v-row>
 
     <!-- <v-btn v-on:mouseover="mouseover">sdf</v-btn> -->
-
-    <v-btn
-      @click="SaveSurvey"
-      color="blue lighten-1 text-capitalize"
-      depressed
-      large
-      block
-      dark
-      class="mb-3"
-    >
-      Submit
-    </v-btn>
+    <div class="buttondiv">
+      <v-btn
+        @click="SaveSurvey"
+        color="blue lighten-1 text-capitalize"
+        depressed
+        large
+        block
+        dark
+        class="mb-3"
+        style="position: relative"
+      >
+        Submit
+      </v-btn>
+    </div>
     <!-- <img src="url(${survey.logo_opt01})" /> -->
   </v-container>
 </template>
@@ -563,12 +601,28 @@ export default {
 
     mouseover: function () {
       <img
-          src="https://www.gstatic.com/webp/gallery/1.sm.jpg"
-          class="thumbnail"
-          height="50px"
-        />
+        src="https://www.gstatic.com/webp/gallery/1.sm.jpg"
+        class="thumbnail"
+        height="50px"
+      />;
     },
   },
 };
 </script>
-<style></style>
+<style>
+img {
+  width: 5%;
+  height: 7%;
+}
+.imghover:hover img {
+  transform-origin: bottom left;
+  transform: scale(15);
+  z-index: 2;
+  /* position: absolute; */
+}
+
+.buttondiv {
+  z-index: -1;
+  /* position: absolute; */
+}
+</style>
